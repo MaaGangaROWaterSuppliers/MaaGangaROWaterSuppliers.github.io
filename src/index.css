@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  @apply text-gray-700;
+}
+
+/* Water Drop Animation */
+@keyframes drop1 {
+  0% { transform: translateY(-40px); opacity: 0; }
+  50% { transform: translateY(0); opacity: 0.7; }
+  100% { transform: translateY(60px); opacity: 0; }
+}
+
+@keyframes drop2 {
+  0% { transform: translateY(-40px); opacity: 0; }
+  50% { transform: translateY(20px); opacity: 0.7; }
+  100% { transform: translateY(80px); opacity: 0; }
+}
+
+@keyframes drop3 {
+  0% { transform: translateY(-60px); opacity: 0; }
+  50% { transform: translateY(40px); opacity: 0.7; }
+  100% { transform: translateY(100px); opacity: 0; }
+}
+
+@keyframes wave {
+  0% { background-position: 0 bottom; }
+  100% { background-position: 100vw bottom; }
+}
+
+.animate-drop1 {
+  animation: drop1 3s infinite;
+}
+
+.animate-drop2 {
+  animation: drop2 4s infinite;
+  animation-delay: 1s;
+}
+
+.animate-drop3 {
+  animation: drop3 3.5s infinite;
+  animation-delay: 2s;
+}
+
+.animate-wave {
+  animation: wave 20s linear infinite;
+}
+
+.animate-ping-slow {
+  animation: ping 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+@keyframes ping {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  75%, 100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+/* Button Styles */
+.btn-primary {
+  @apply transition duration-300 transform hover:scale-105;
+}
+
+.btn-secondary {
+  @apply transition duration-300;
+}
